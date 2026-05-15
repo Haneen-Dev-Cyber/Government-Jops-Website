@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Job Announcements</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0b3d2e, #146b4f);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .intro h2 {
+            color: #0b3d2e;
+        }
+
+        .jobs {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .job-card {
+            background: white;
+            width: 300px;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+            padding: 25px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .job-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .job-card h3 {
+            color: #0b3d2e;
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e8f5ef;
+            color: #146b4f;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background: #0b3d2e;
+            color: white;
+            border: none;
+            padding: 11px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #146b4f;
+        }
+
+        .details {
+            display: none;
+            background: #f1f8f5;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            background: #0b3d2e;
+            color: white;
+            padding: 18px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Government Job Announcements</h1>
+        <p>A simple web interface for displaying government job opportunities</p>
+    </header>
+
+    <div class="container">
+
+        <div class="intro">
+            <h2>Available Jobs</h2>
+            <p>Select a job to view more details about the position and requirements.</p>
+        </div>
+
+        <div class="jobs">
+
+            <div class="job-card">
+                <div class="job-icon">💻</div>
+                <h3>IT Support Specialist</h3>
+                <span class="tag">Information Technology</span>
+                <p>Responsible for assisting users and solving basic technical issues.</p>
+
+                <button onclick="showDetails('details1')">View Details</button>
+                <button onclick="applyJob()">Apply Now</button>
+
+                <div id="details1" class="details">
+                    <strong>Description:</strong> Provide technical support, troubleshoot devices, and assist employees.<br>
+                    <strong>Requirements:</strong> Basic computer skills, problem solving, and communication skills.
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-icon">🛡️</div>
+                <h3>Cybersecurity Analyst</h3>
+                <span class="tag">Cybersecurity</span>
+<p>Responsible for monitoring security alerts and protecting systems.</p>
+
+                <button onclick="showDetails('details2')">View Details</button>
+                <button onclick="applyJob()">Apply Now</button>
+
+                <div id="details2" class="details">
+                    <strong>Description:</strong> Monitor systems, review alerts, and support cybersecurity procedures.<br>
+                    <strong>Requirements:</strong> Security awareness, basic networking, and attention to detail.
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-icon">🌐</div>
+                <h3>Network Technician</h3>
+                <span class="tag">Networking</span>
+                <p>Responsible for supporting network connections and infrastructure.</p>
+
+                <button onclick="showDetails('details3')">View Details</button>
+                <button onclick="applyJob()">Apply Now</button>
+
+                <div id="details3" class="details">
+                    <strong>Description:</strong> Check network connectivity, cables, switches, and basic configuration.<br>
+                    <strong>Requirements:</strong> Knowledge of IP addresses, networks, and technical support.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Training Project - Communication and Information Technology Center</p>
+    </footer>
+
+    <script>
+        function showDetails(id) {
+            var section = document.getElementById(id);
+
+            if (section.style.display === "block") {
+                section.style.display = "none";
+            } else {
+                section.style.display = "block";
+            }
+        }
+
+        function applyJob() {
+            alert("Application form is not connected. This is a front-end prototype.");
+        }
+    </script>
+
+</body>
+</html>
