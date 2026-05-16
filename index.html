@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Government Job Portal</title>
+    <title>Saudi Government Job Portal</title>
 
     <style>
         * {
@@ -20,7 +20,7 @@
         .hero {
             min-height: 100vh;
             background:
-                linear-gradient(rgba(4, 20, 45, 0.75), rgba(4, 20, 45, 0.75)),
+                linear-gradient(rgba(4, 20, 45, 0.78), rgba(4, 20, 45, 0.78)),
                 url("https://images.unsplash.com/photo-1497366754035-f200968a6e72");
             background-size: cover;
             background-position: center;
@@ -33,11 +33,11 @@
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 900px;
         }
 
         .hero h1 {
-            font-size: 52px;
+            font-size: 54px;
             margin-bottom: 15px;
         }
 
@@ -83,6 +83,57 @@
             font-size: 17px;
         }
 
+        .slider {
+            background: white;
+        }
+
+        .slide-box {
+            position: relative;
+            max-width: 1100px;
+            height: 360px;
+            margin: auto;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+        }
+
+        .slide {
+            display: none;
+            height: 100%;
+            color: white;
+            padding: 55px;
+            background-size: cover;
+            background-position: center;
+            align-items: center;
+        }
+
+        .slide.active {
+            display: flex;
+            animation: fade 0.8s;
+        }
+
+        @keyframes fade {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+        .slide-content {
+            max-width: 520px;
+            background: rgba(0,0,0,0.45);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .slide-content h2 {
+            font-size: 36px;
+            margin: 0 0 15px;
+        }
+
+        .slide-content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
         .about {
             display: flex;
             gap: 35px;
@@ -116,43 +167,16 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.18);
         }
 
-        .features {
-            background: #0b1730;
-            color: white;
+        .category {
+            margin-bottom: 70px;
         }
 
-        .features .section-title h2,
-        .features .section-title p {
-            color: white;
-        }
-
-        .feature-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
-        }
-
-        .feature-card {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.12);
-            padding: 30px;
-            border-radius: 18px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-7px);
-            background: rgba(255,255,255,0.14);
-        }
-
-        .feature-card .icon {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .jobs-section {
-            background: #f5f7fb;
+        .category-title {
+            color: #12345b;
+            font-size: 30px;
+            margin-bottom: 25px;
+            border-left: 6px solid #1e88e5;
+            padding-left: 15px;
         }
 
         .jobs {
@@ -175,12 +199,12 @@
         }
 
         .job-card img {
-            width: 70px;
-            height: 70px;
+            width: 68px;
+            height: 68px;
             margin-bottom: 15px;
         }
 
-        job-card h3 {
+        .job-card h3 {
             color: #12345b;
             margin-bottom: 8px;
         }
@@ -265,64 +289,61 @@
         <div class="hero-content">
             <h1>Saudi Government Job Portal</h1>
             <p>
-                A professional web interface designed to display government job opportunities
-                in a simple, organized, and user-friendly way.
+                Explore available job opportunities across multiple sectors through
+                an organized and user-friendly recruitment platform.
             </p>
             <button onclick="scrollToSection('jobs')">View Jobs</button>
-            <button class="dark-btn" onclick="scrollToSection('about')">About Project</button>
+            <button class="dark-btn" onclick="scrollToSection('about')">About Platform</button>
         </div>
     </div>
 
-    <section id="about">
-        <div class="about">
-            <div class="about-text">
-                <h2>About This Project</h2>
-                <p>
-                    This website is a front-end prototype developed during the practical training period.
-                    It simulates a government job announcement platform where users can view available
-                    jobs, read job details, and interact with simple buttons.
-                </p>
-                <p>
-                    The project focuses on HTML for page structure, CSS for design and layout,
-                    and JavaScript for simple interactive features.
-                </p>
+    <section class="slider">
+        <div class="section-title">
+            <h2>Latest Job Announcements</h2>
+            <p>Important opportunities currently highlighted on the platform</p>
+        </div>
+
+        <div class="slide-box">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1551434678-e076c223a692');">
+                <div class="slide-content">
+                    <h2>Urgent Technology Jobs</h2>
+                    <p>New openings are available in IT support, cybersecurity, software development, and database management.</p>
+                </div>
             </div>
 
-            <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692" alt="Office Work">
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f');">
+                <div class="slide-content">
+                    <h2>Finance and Banking Opportunities</h2>
+                    <p>Explore banking, accounting, financial analysis, and customer service positions.</p>
+                </div>
+            </div>
+
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1556761175-b413da4baf72');">
+                <div class="slide-content">
+                    <h2>Administrative Careers</h2>
+                    <p>Browse HR, administration, document control, and office coordination jobs.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="features">
-        <div class="section-title">
-            <h2>Project Features</h2>
-            <p>Main features included in the prototype</p>
-        </div>
-
-        <div class="feature-cards">
-            <div class="feature-card">
-                <div class="icon">💼</div>
-                <h3>Job Listings</h3>
-                <p>Displays several government job opportunities in organized cards.</p>
+    <section id="about">
+        <div class="about">
+            <div class="about-text">
+                <h2>About the Platform</h2>
+                <p>
+                    This platform displays job opportunities in a clear and organized way.
+                    Users can browse different job categories, read position details,
+                    and submit an initial application request.
+                </p>
+                <p>
+                    The platform includes technology, administration, finance, banking,
+                    customer service, and support jobs to help users find suitable opportunities.
+                </p>
             </div>
 
-            <div class="feature-card">
-                <div class="icon">🖱️</div>
-                <h3>Interactive Buttons</h3>
-                <p>Users can click buttons to view job details or simulate applying.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="icon">🎨</div>
-                <h3>Modern Design</h3>
-                <p>The interface uses sections, colors, cards, and images.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="icon">🔒</div>
-                <h3>No Sensitive Data</h3>
-                <p>The website is a prototype and does not connect to real systems.</p>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df" alt="Office Work">
             </div>
         </div>
     </section>
@@ -333,68 +354,214 @@
             <p>Select a job to view more details about the position and requirements.</p>
         </div>
 
-        <div class="jobs">
+        <div class="category">
+            <h2 class="category-title">Information Technology Jobs</h2>
+            <div class="jobs">
 
-            <div class="job-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="IT Icon">
-                <h3>IT Support Specialist</h3>
-                <span class="tag">Information Technology</span>
-                <p>Responsible for assisting users and solving basic technical issues.</p>
-
-                <button class="btn" onclick="showDetails('details1')">View Details</button>
-                <button class="btn" onclick="applyJob()">Apply Now</button>
-
-                <div id="details1" class="details">
-                    <strong>Description:</strong> Provide technical support, troubleshoot devices, and assist employees.<br>
-                    <strong>Requirements:</strong> Basic computer skills, problem solving, and communication skills.
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+                    <h3>IT Support Specialist</h3>
+                    <span class="tag">Information Technology</span>
+                    <p>Responsible for assisting users and solving technical issues.</p>
+                    <button class="btn" onclick="showDetails('details1')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details1" class="details">
+                        <strong>Description:</strong> Troubleshoot devices, support users, and maintain computer systems.<br>
+                        <strong>Requirements:</strong> Computer skills, problem solving, and communication.
+                    </div>
                 </div>
-            </div>
 
-            <div class="job-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png" alt="Cybersecurity Icon">
-                <h3>Cybersecurity Analyst</h3>
-                <span class="tag">Cybersecurity</span>
-                <p>Responsible for monitoring security alerts and protecting systems.</p>
-
-                <button class="btn" onclick="showDetails('details2')">View Details</button>
-                <button class="btn" onclick="applyJob()">Apply Now</button>
-
-                <div id="details2" class="details">
-                    <strong>Description:</strong> Monitor systems, review alerts, and support cybersecurity procedures.<br>
-                    <strong>Requirements:</strong> Security awareness, basic networking, and attention to detail.
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png">
+                    <h3>Cybersecurity Analyst</h3>
+                    <span class="tag">Cybersecurity</span>
+                    <p>Responsible for monitoring security alerts and protecting systems.</p>
+                    <button class="btn" onclick="showDetails('details2')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details2" class="details">
+                        <strong>Description:</strong> Monitor systems, analyze alerts, and support protection procedures.<br>
+                        <strong>Requirements:</strong> Security awareness, networking basics, and attention to detail.
+                    </div>
                 </div>
-            </div>
 
-            <div class="job-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/2885/2885417.png" alt="Network Icon">
-                <h3>Network Technician</h3>
-                <span class="tag">Networking</span>
-                <p>Responsible for supporting network connections and infrastructure.</p>
-
-                <button class="btn" onclick="showDetails('details3')">View Details</button>
-                <button class="btn" onclick="applyJob()">Apply Now</button>
-
-                <div id="details3" class="details">
-                    <strong>Description:</strong> Check network connectivity, cables, switches, and basic configuration.<br>
-                    <strong>Requirements:</strong> Knowledge of IP addresses, networks, and technical support.
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2885/2885417.png">
+                    <h3>Network Technician</h3>
+                    <span class="tag">Networking</span>
+                    <p>Responsible for supporting network connections and infrastructure.</p>
+                    <button class="btn" onclick="showDetails('details3')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details3" class="details">
+                        <strong>Description:</strong> Support cables, switches, routers, and network connectivity.<br>
+                        <strong>Requirements:</strong> Networking basics, IP addressing, and technical support.
+                    </div>
                 </div>
-            </div>
 
-            <div class="job-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/2906/2906274.png" alt="Database Icon">
-                <h3>Database Assistant</h3>
-                <span class="tag">Database</span>
-                <p>Responsible for assisting in organizing and reviewing database records.</p>
-
-                <button class="btn" onclick="showDetails('details4')">View Details</button>
-                <button class="btn" onclick="applyJob()">Apply Now</button>
-
-                <div id="details4" class="details">
-                    <strong>Description:</strong> Assist with data organization and basic SQL concepts.<br>
-                    <strong>Requirements:</strong> Understanding of databases, accuracy, and organization skills.
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2906/2906274.png">
+                    <h3>Database Assistant</h3>
+                    <span class="tag">Database</span>
+                    <p>Responsible for assisting in organizing and reviewing database records.</p>
+                    <button class="btn" onclick="showDetails('details4')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details4" class="details">
+                        <strong>Description:</strong> Assist with data entry, SQL queries, and database organization.<br>
+                        <strong>Requirements:</strong> Accuracy, organization, and database basics.
+                    </div>
                 </div>
-            </div>
 
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png">
+                    <h3>Junior Web Developer</h3>
+                    <span class="tag">Web Development</span>
+                    <p>Responsible for building and updating website interfaces.</p>
+                    <button class="btn" onclick="showDetails('details5')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details5" class="details">
+                        <strong>Description:</strong> Develop web pages and improve user interface design.<br>
+                        <strong>Requirements:</strong> HTML, CSS, JavaScript basics, and creativity.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">Human Resources Jobs</h2>
+            <div class="jobs">
+
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+                    <h3>HR Specialist</h3>
+                    <span class="tag">Human Resources</span>
+                    <p>Responsible for employee records, recruitment, and HR support.</p>
+                    <button class="btn" onclick="showDetails('details6')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details6" class="details">
+                        <strong>Description:</strong> Support recruitment processes and organize employee records.<br>
+                        <strong>Requirements:</strong> Communication, organization, and HR knowledge.
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+                    <h3>Recruitment Coordinator</h3>
+                    <span class="tag">Recruitment</span>
+                    <p>Responsible for coordinating interviews and job applications.</p>
+                    <button class="btn" onclick="showDetails('details7')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details7" class="details">
+                        <strong>Description:</strong> Schedule interviews and follow up with applicants.<br>
+                        <strong>Requirements:</strong> Time management and communication skills.
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png">
+                    <h3>Training Coordinator</h3>
+                    <span class="tag">Training</span>
+                    <p>Responsible for organizing employee training programs.</p>
+                    <button class="btn" onclick="showDetails('details8')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details8" class="details">
+                        <strong>Description:</strong> Prepare training schedules and coordinate trainee records.<br>
+                        <strong>Requirements:</strong> Planning, organization, and reporting skills.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">Finance and Banking Jobs</h2>
+            <div class="jobs">
+
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png">
+                    <h3>Customer Service Officer</h3>
+                    <span class="tag">Banking</span>
+                    <p>Responsible for assisting clients and answering financial inquiries.</p>
+                    <button class="btn" onclick="showDetails('details9')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details9" class="details">
+                        <strong>Description:</strong> Support clients, answer inquiries, and provide service guidance.<br>
+                        <strong>Requirements:</strong> Communication and customer service skills.
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2331/2331941.png">
+                    <h3>Accountant Assistant</h3>
+                    <span class="tag">Accounting</span>
+                    <p>Responsible for supporting financial records and reports.</p>
+                    <button class="btn" onclick="showDetails('details10')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details10" class="details">
+                        <strong>Description:</strong> Assist with accounting documents and financial data entry.<br>
+                        <strong>Requirements:</strong> Accuracy, Excel skills, and accounting basics.
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png">
+                    <h3>Financial Analyst Assistant</h3>
+                    <span class="tag">Finance</span>
+                    <p>Responsible for assisting with financial data review and analysis.</p>
+                    <button class="btn" onclick="showDetails('details11')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details11" class="details">
+                        <strong>Description:</strong> Review financial reports and assist in preparing analysis summaries.<br>
+                        <strong>Requirements:</strong> Analytical thinking, Excel, and reporting skills.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">Administration and Service Jobs</h2>
+            <div class="jobs">
+
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
+                    <h3>Administrative Assistant</h3>
+                    <span class="tag">Administration</span>
+                    <p>Responsible for organizing documents and supporting office operations.</p>
+                    <button class="btn" onclick="showDetails('details12')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details12" class="details">
+                        <strong>Description:</strong> Manage files, support departments, and prepare documents.<br>
+                        <strong>Requirements:</strong> Organization, computer skills, and teamwork.
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
+                    <h3>Cashier</h3>
+                    <span class="tag">Service</span>
+                    <p>Responsible for handling payments and customer transactions.</p>
+                    <button class="btn" onclick="showDetails('details13')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details13" class="details">
+                        <strong>Description:</strong> Process payments and maintain transaction accuracy.<br>
+                        <strong>Requirements:</strong> Honesty, accuracy, and customer service.
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png">
+                    <h3>Receptionist</h3>
+                    <span class="tag">Front Desk</span>
+                    <p>Responsible for welcoming visitors and managing inquiries.</p>
+                    <button class="btn" onclick="showDetails('details14')">View Details</button>
+                    <button class="btn" onclick="applyJob()">Apply Now</button>
+                    <div id="details14" class="details">
+                        <strong>Description:</strong> Receive visitors, answer calls, and guide users.<br>
+                        <strong>Requirements:</strong> Communication, professionalism, and organization.
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -413,8 +580,8 @@
 
             <div class="step">
                 <span>02</span>
-                <h3>View Jobs</h3>
-                <p>The user browses available government jobs.</p>
+                <h3>Browse Categories</h3>
+                <p>The user views available jobs by category.</p>
             </div>
 
             <div class="step">
@@ -426,15 +593,15 @@
             <div class="step">
                 <span>04</span>
                 <h3>Apply</h3>
-                <p>The Apply button simulates the application process.</p>
+                <p>The Apply button opens an application message.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p><strong>Project - Communication and Information Technology Center</strong></p>
-        <p><strong>Developed by Haneen Al-Darbi under the supervision of trainer Basma Al-Shehri </strong></p> 
-        <p>Front-End Prototype Using HTML, CSS, and JavaScript</p>
+        <p><strong>Government Job Portal</strong></p>
+        <p><strong>Developed by Haneen Al-Darbi under the supervision of trainer Basma Al-Shehri</strong></p>
+        <p>Front-End Website Using HTML, CSS, and JavaScript</p>
     </footer>
 
     <script>
@@ -449,7 +616,7 @@
         }
 
         function applyJob() {
-            alert("This is a front-end prototype. The application form is not connected to a database.");
+            alert("Your application request has been received successfully.");
         }
 
         function scrollToSection(sectionId) {
@@ -457,6 +624,17 @@
                 behavior: "smooth"
             });
         }
+
+        var slides = document.querySelectorAll(".slide");
+        var currentSlide = 0;
+
+        function showSlide() {
+            slides[currentSlide].classList.remove("active");
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add("active");
+        }
+
+        setInterval(showSlide, 3500);
     </script>
 
 </body>
