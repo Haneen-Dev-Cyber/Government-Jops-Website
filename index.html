@@ -3,91 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Government Job Announcements</title>
+    <title>Government Job Portal</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f4f6f8;
+            background: #f5f7fb;
             color: #222;
         }
 
-        header {
-            background: linear-gradient(135deg, #0b3d2e, #146b4f);
+        .hero {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(4, 20, 45, 0.75), rgba(4, 20, 45, 0.75)),
+                url("https://images.unsplash.com/photo-1497366754035-f200968a6e72");
+            background-size: cover;
+            background-position: center;
             color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 45px 20px;
+            padding: 40px;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 36px;
+        .hero-content {
+            max-width: 850px;
         }
 
-        header p {
-            margin-top: 10px;
-            font-size: 18px;
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 35px auto;
-        }
-
-        .intro {
-            text-align: center;
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
             margin-bottom: 30px;
         }
 
-        .intro h2 {
-            color: #0b3d2e;
+        .hero button {
+            background: white;
+            color: #12345b;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 8px;
         }
 
-        .jobs {
+        .hero .dark-btn {
+            background: #1e88e5;
+            color: white;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #12345b;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        .about {
             display: flex;
-            gap: 20px;
-            justify-content: center;
+            gap: 35px;
+            align-items: center;
             flex-wrap: wrap;
         }
 
-        .job-card {
-            background: white;
-            width: 300px;
-            border-radius: 14px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
-            padding: 25px;
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            color: #12345b;
+            font-size: 34px;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 22px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        }
+
+        .features {
+            background: #0b1730;
+            color: white;
+        }
+
+        .features .section-title h2,
+        .features .section-title p {
+            color: white;
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 30px;
+            border-radius: 18px;
             text-align: center;
             transition: 0.3s;
         }
 
+        .feature-card:hover {
+            transform: translateY(-7px);
+            background: rgba(255,255,255,0.14);
+        }
+
+        .feature-card .icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .jobs-section {
+            background: #f5f7fb;
+        }
+
+        .jobs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+            text-align: center;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
         .job-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-7px);
         }
 
-        .job-icon {
-            font-size: 45px;
-            margin-bottom: 10px;
+        .job-card img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
         }
 
-        .job-card h3 {
-            color: #0b3d2e;
+        job-card h3 {
+            color: #12345b;
             margin-bottom: 8px;
         }
 
         .tag {
             display: inline-block;
-            background: #e8f5ef;
-            color: #146b4f;
-            padding: 6px 12px;
+            background: #e8f1ff;
+            color: #1e88e5;
+            padding: 7px 14px;
             border-radius: 20px;
             font-size: 13px;
             margin-bottom: 15px;
         }
 
-        button {
-            background: #0b3d2e;
+        .job-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background: #12345b;
             color: white;
             border: none;
             padding: 11px 18px;
@@ -97,41 +211,124 @@
             font-size: 14px;
         }
 
-        button:hover {
-            background: #146b4f;
+        .btn:hover {
+            background: #1e88e5;
         }
 
         .details {
             display: none;
-            background: #f1f8f5;
+            background: #eef5ff;
             margin-top: 15px;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 12px;
             text-align: left;
             font-size: 14px;
-            line-height: 1.6;
+            line-height: 1.7;
+        }
+
+        .steps {
+            background: white;
+        }
+
+        .step-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .step {
+            background: #f5f7fb;
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            border-bottom: 4px solid #1e88e5;
+        }
+
+        .step span {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1e88e5;
         }
 
         footer {
-            text-align: center;
-            background: #0b3d2e;
+            background: #071225;
             color: white;
-            padding: 18px;
-            margin-top: 40px;
+            text-align: center;
+            padding: 25px;
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Government Job Announcements</h1>
-        <p>A simple web interface for displaying government job opportunities</p>
-    </header>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Saudi Government Job Portal</h1>
+            <p>
+                A professional web interface designed to display government job opportunities
+                in a simple, organized, and user-friendly way.
+            </p>
+            <button onclick="scrollToSection('jobs')">View Jobs</button>
+            <button class="dark-btn" onclick="scrollToSection('about')">About Project</button>
+        </div>
+    </div>
 
-    <div class="container">
+    <section id="about">
+        <div class="about">
+            <div class="about-text">
+                <h2>About This Project</h2>
+                <p>
+                    This website is a front-end prototype developed during the practical training period.
+                    It simulates a government job announcement platform where users can view available
+                    jobs, read job details, and interact with simple buttons.
+                </p>
+                <p>
+                    The project focuses on HTML for page structure, CSS for design and layout,
+                    and JavaScript for simple interactive features.
+                </p>
+            </div>
 
-        <div class="intro">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692" alt="Office Work">
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section-title">
+            <h2>Project Features</h2>
+            <p>Main features included in the prototype</p>
+        </div>
+
+        <div class="feature-cards">
+            <div class="feature-card">
+                <div class="icon">💼</div>
+                <h3>Job Listings</h3>
+                <p>Displays several government job opportunities in organized cards.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🖱️</div>
+                <h3>Interactive Buttons</h3>
+                <p>Users can click buttons to view job details or simulate applying.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🎨</div>
+                <h3>Modern Design</h3>
+                <p>The interface uses sections, colors, cards, and images.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h3>No Sensitive Data</h3>
+                <p>The website is a prototype and does not connect to real systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="jobs-section" id="jobs">
+        <div class="section-title">
             <h2>Available Jobs</h2>
             <p>Select a job to view more details about the position and requirements.</p>
         </div>
@@ -139,13 +336,13 @@
         <div class="jobs">
 
             <div class="job-card">
-                <div class="job-icon">💻</div>
+                <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="IT Icon">
                 <h3>IT Support Specialist</h3>
                 <span class="tag">Information Technology</span>
                 <p>Responsible for assisting users and solving basic technical issues.</p>
 
-                <button onclick="showDetails('details1')">View Details</button>
-                <button onclick="applyJob()">Apply Now</button>
+                <button class="btn" onclick="showDetails('details1')">View Details</button>
+                <button class="btn" onclick="applyJob()">Apply Now</button>
 
                 <div id="details1" class="details">
                     <strong>Description:</strong> Provide technical support, troubleshoot devices, and assist employees.<br>
@@ -154,13 +351,13 @@
             </div>
 
             <div class="job-card">
-                <div class="job-icon">🛡️</div>
+                <img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png" alt="Cybersecurity Icon">
                 <h3>Cybersecurity Analyst</h3>
                 <span class="tag">Cybersecurity</span>
-<p>Responsible for monitoring security alerts and protecting systems.</p>
+                <p>Responsible for monitoring security alerts and protecting systems.</p>
 
-                <button onclick="showDetails('details2')">View Details</button>
-                <button onclick="applyJob()">Apply Now</button>
+                <button class="btn" onclick="showDetails('details2')">View Details</button>
+                <button class="btn" onclick="applyJob()">Apply Now</button>
 
                 <div id="details2" class="details">
                     <strong>Description:</strong> Monitor systems, review alerts, and support cybersecurity procedures.<br>
@@ -169,13 +366,13 @@
             </div>
 
             <div class="job-card">
-                <div class="job-icon">🌐</div>
+                <img src="https://cdn-icons-png.flaticon.com/512/2885/2885417.png" alt="Network Icon">
                 <h3>Network Technician</h3>
                 <span class="tag">Networking</span>
                 <p>Responsible for supporting network connections and infrastructure.</p>
 
-                <button onclick="showDetails('details3')">View Details</button>
-                <button onclick="applyJob()">Apply Now</button>
+                <button class="btn" onclick="showDetails('details3')">View Details</button>
+                <button class="btn" onclick="applyJob()">Apply Now</button>
 
                 <div id="details3" class="details">
                     <strong>Description:</strong> Check network connectivity, cables, switches, and basic configuration.<br>
@@ -183,11 +380,61 @@
                 </div>
             </div>
 
+            <div class="job-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2906/2906274.png" alt="Database Icon">
+                <h3>Database Assistant</h3>
+                <span class="tag">Database</span>
+                <p>Responsible for assisting in organizing and reviewing database records.</p>
+
+                <button class="btn" onclick="showDetails('details4')">View Details</button>
+                <button class="btn" onclick="applyJob()">Apply Now</button>
+
+                <div id="details4" class="details">
+                    <strong>Description:</strong> Assist with data organization and basic SQL concepts.<br>
+                    <strong>Requirements:</strong> Understanding of databases, accuracy, and organization skills.
+                </div>
+            </div>
+
         </div>
-    </div>
+    </section>
+
+    <section class="steps">
+        <div class="section-title">
+            <h2>How the Website Works</h2>
+            <p>Simple steps showing the user journey</p>
+        </div>
+
+        <div class="step-boxes">
+            <div class="step">
+                <span>01</span>
+                <h3>Open Website</h3>
+                <p>The user enters the job portal homepage.</p>
+            </div>
+
+            <div class="step">
+                <span>02</span>
+                <h3>View Jobs</h3>
+                <p>The user browses available government jobs.</p>
+            </div>
+
+            <div class="step">
+                <span>03</span>
+                <h3>Read Details</h3>
+                <p>The user clicks View Details to see requirements.</p>
+            </div>
+
+            <div class="step">
+                <span>04</span>
+                <h3>Apply</h3>
+                <p>The Apply button simulates the application process.</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>Training Project - Communication and Information Technology Center</p>
+        <p><strong>Project - Communication and Information Technology Center</strong></p>
+        <p><strong>Developed by Haneen Al-Darbi under the supervision of trainer Basma Al-Shehri </strong></p> 
+        <p>Front-End Prototype Using HTML, CSS, and JavaScript</p>
     </footer>
 
     <script>
@@ -202,7 +449,13 @@
         }
 
         function applyJob() {
-            alert("Application form is not connected. This is a front-end prototype.");
+            alert("This is a front-end prototype. The application form is not connected to a database.");
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: "smooth"
+            });
         }
     </script>
 
